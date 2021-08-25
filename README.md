@@ -1,5 +1,5 @@
 # javascript_study
 
-### Reference
+## Reference
 
-- 모던 javascript 튜토리얼 : https://ko.javascript.info/
+- [모던 javascript 튜토리얼](https://ko.javascript.info/)
