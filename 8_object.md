@@ -2,10 +2,18 @@
 
 원시형(primitive type)과 달리 키로 구분된 데이터 집합이나 복잡한 개체 등 다양한 데이터 저장 가능
 
+빈 객체 생성
+
 ```javascript
-let movie = new Object(); // '객체 생성자' 문법
-let movie = {}; // '객체 리터럴' 문법
+let movie = new Object(); // '객체 생성자(object constructor)' 문법
+let movie = {}; // '객체 리터럴(object literal)' 문법
 ```
+
+`{ key : value }`
+
+프로퍼티 값에는 어떤 표현식도 올 수 있음
+
+이 값이 함수 일 경우, 프로퍼티 -> `메서드`
 
 ```javascript
 let movie = {
@@ -15,13 +23,15 @@ let movie = {
 };
 ```
 
-- 프로퍼티 접근
+프로퍼티 접근
 
-점 표기법 : `obj.property`
+- 점 표기법 : `obj.property`
 
-대괄호 표기법 : `obj["property"]`
+- 대괄호 표기법 : `obj["property"]`
 
-- 프로퍼티 삭제 : `delete obj.prop`
+프로퍼티 삭제
+
+ `delete obj.property`
 
 ## 프로퍼티 존재 여부 확인
 
@@ -136,3 +146,7 @@ function multiplayNumeric(obj){
     }
 }
 ```
+
+- reference
+
+<https://velog.io/@smp2103/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%B0%B8%EC%A1%B0-%ED%83%80%EC%9E%85%EA%B0%9D%EC%B2%B4>
