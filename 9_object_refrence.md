@@ -71,8 +71,11 @@ for (let key in user) {
 ```
 
 - `Object.assign` 사용
+
 `얕은 복사(Shallow copy)`
+
 `Object.assign(target, [src1, src2, src3...])`
+
 `target`
 : 목표 객체
 
@@ -114,7 +117,102 @@ console.log(cloneUser); // {id: 1, name: "Ann"}
 
 얕은 복사는 중첩 객체를 처리하지 못함
 
-- reference
+## 중첩객체 복사 
+
+`깊은 복사(Deep copy)`
+
+- sturctured clone algorithm
+
+user[key]의 각 값을 검사하면서 그 값이 객체인 경우 객체의 구조도 복사해주는 `반복문(for...in)` 사용
+
+복사를 진행하다가 객체를 만나면 함수를 재귀적으로 진행 
+
+```javascript
+let user = {
+    name: "Ann",
+    age: "20",
+    grade:{
+        speaking: "A+",
+        grammer: "B",
+        reading: "B+"
+    },
+};    
+
+function copyObj(obj){
+    const result = {};
+
+    for (let key in obj) {
+        if (typeof obj[key] === 'object') {
+            result[key] = copyObj(obj[key]);
+        } else {
+            result[key] = obj[key];
+        }
+    }
+    return result;
+}
+
+const copiedUser = copyObj(user);
+copiedUser.name = "John";
+copiedUser.grade.speaking = "A";
+console.log(copiedUser); //{name: "John", age: "20", grade: {…}}
+console.log(user.grade.speaking === copiedUser.grade.speaking); //false
+```
+
+- `JSON.stringify()` 와 `JSON.parse()`사용
+
+`JSON.stringify()` : 객체를 json 문자열로 변환
+
+`JSON.parse()` : json 문자열을 객체로 변환
+
+JSON.stringify()를 이용해 json 문자열로 변환하는 과정에서 원본 객체와의 참조가 끊어지기 때문에 JSON.parse()를 이용해 다시 객체로 변환 
+
+다른 방법에 비해 느리고, `Date`나 `함수`, `undefined`, `regExp`, `infinity`가 객체 내에 존재할 경우에는 원하는 결과를 얻을 수 없음
+
+```javascript
+let user = {
+    name: "Ann",
+    age: "20",
+    grade:{
+        speaking: "A+",
+        grammer: "B",
+        reading: "B+"
+    },
+};
+
+const copiedUser = JSON.parse(JSON.stringify(user));
+copiedUser.name = "John";
+copiedUser.grade.speaking = "A";
+console.log(copiedUser); //{name: "John", age: "20", grade: {…}}
+console.log(user.grade.speaking === copiedUser.grade.speaking); //false
+```
+
+- lodash의 메서드 `_.cloneDeep(obj)`사용
+
+`lodash` : 자바스크립트 고차함수 집합 및 함수형 라이브러리
+
+array, collection, date 등 데이터의 필수적인 구조를 쉽게 다룰 수 있게끔 하는데에 사용
+
+`_.cloneDeep(obj)` : `_.clone`을 재귀적으로 수행해주는 함수
+
+```javascript
+let user = {
+    name: "Ann",
+    age: "20",
+    grade:{
+        speaking: "A+",
+        grammer: "B",
+        reading: "B+"
+    },
+};
+
+const copiedUser = _.cloneDeep(User);
+copiedUser.name = "John";
+copiedUser.grade.speaking = "A";
+console.log(copiedUser); //{name: "John", age: "20", grade: {…}}
+console.log(user.grade.speaking === copiedUser.grade.speaking); //false
+```
+
+- 추가 reference
 
 자바스크립트 참조 타입(객체)
 
@@ -123,3 +221,14 @@ console.log(cloneUser); // {id: 1, name: "Ann"}
 생활코딩 유튜브
 
 <https://www.youtube.com/watch?v=dOTpbvvOV0M&ab_channel=%EC%83%9D%ED%99%9C%EC%BD%94%EB%94%A9>
+
+[javascript] 얕은 복사, 깊은 복사
+
+<https://velog.io/@th0566/Javascript-%EC%96%95%EC%9D%80-%EB%B3%B5%EC%82%AC-%EA%B9%8A%EC%9D%80-%EB%B3%B5%EC%82%AC>
+
+JavaScript로 Deep Copy 하는 여러 방법
+
+<https://leonkong.cc/posts/js-deep-copy.html>
+
+Javascript | 얕은 복사와 깊은 복사(Part.1)
+<https://velog.io/@shin6403/Javascript-%EC%96%95%EC%9D%80-%EB%B3%B5%EC%82%AC%EC%99%80-%EA%B9%8A%EC%9D%80-%EB%B3%B5%EC%82%ACPart.1>
