@@ -117,7 +117,7 @@ console.log(cloneUser); // {id: 1, name: "Ann"}
 
 얕은 복사는 중첩 객체를 처리하지 못함
 
-## 중첩객체 복사 
+## 중첩객체 복사
 
 `깊은 복사(Deep copy)`
 
@@ -125,7 +125,7 @@ console.log(cloneUser); // {id: 1, name: "Ann"}
 
 user[key]의 각 값을 검사하면서 그 값이 객체인 경우 객체의 구조도 복사해주는 `반복문(for...in)` 사용
 
-복사를 진행하다가 객체를 만나면 함수를 재귀적으로 진행 
+복사를 진행하다가 객체를 만나면 함수를 재귀적으로 진행
 
 ```javascript
 let user = {
@@ -164,7 +164,7 @@ console.log(user.grade.speaking === copiedUser.grade.speaking); //false
 
 `JSON.parse()` : json 문자열을 객체로 변환
 
-JSON.stringify()를 이용해 json 문자열로 변환하는 과정에서 원본 객체와의 참조가 끊어지기 때문에 JSON.parse()를 이용해 다시 객체로 변환 
+JSON.stringify()를 이용해 json 문자열로 변환하는 과정에서 원본 객체와의 참조가 끊어지기 때문에 JSON.parse()를 이용해 다시 객체로 변환
 
 다른 방법에 비해 느리고, `Date`나 `함수`, `undefined`, `regExp`, `infinity`가 객체 내에 존재할 경우에는 원하는 결과를 얻을 수 없음
 
