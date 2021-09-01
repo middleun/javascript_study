@@ -52,7 +52,7 @@ console.log( a == b ); // false
 
 객체를 복제하고 싶다면?
 
-- 새로운 빈 객체 생성 후 기존 객체의 프로퍼티 전부를 복사
+### 새로운 빈 객체 생성 후 기존 객체의 프로퍼티 전부를 복사
 
 ```javascript
 let user = {
@@ -70,9 +70,9 @@ for (let key in user) {
 
 ```
 
-- `Object.assign` 사용
+### `Object.assign` 사용
 
-`얕은 복사(Shallow copy)`
+**`얕은 복사(Shallow copy)`**
 
 `Object.assign(target, [src1, src2, src3...])`
 
@@ -119,13 +119,13 @@ console.log(cloneUser); // {id: 1, name: "Ann"}
 
 ## 중첩객체 복사
 
-`깊은 복사(Deep copy)`
+**`깊은 복사(Deep copy)`**
 
-- sturctured clone algorithm
+### sturctured clone algorithm
 
 user[key]의 각 값을 검사하면서 그 값이 객체인 경우 객체의 구조도 복사해주는 `반복문(for...in)` 사용
 
-복사를 진행하다가 객체를 만나면 함수를 재귀적으로 진행
+복사를 진행하다가 객체를 만나면 함수를 `재귀적`으로 진행
 
 ```javascript
 let user = {
@@ -158,7 +158,7 @@ console.log(copiedUser); //{name: "John", age: "20", grade: {…}}
 console.log(user.grade.speaking === copiedUser.grade.speaking); //false
 ```
 
-- `JSON.stringify()` 와 `JSON.parse()`사용
+### `JSON.stringify()` 와 `JSON.parse()`사용
 
 `JSON.stringify()` : 객체를 json 문자열로 변환
 
@@ -186,7 +186,7 @@ console.log(copiedUser); //{name: "John", age: "20", grade: {…}}
 console.log(user.grade.speaking === copiedUser.grade.speaking); //false
 ```
 
-- lodash의 메서드 `_.cloneDeep(obj)`사용
+### lodash의 메서드 `_.cloneDeep(obj)`사용
 
 `lodash` : 자바스크립트 고차함수 집합 및 함수형 라이브러리
 
@@ -212,7 +212,7 @@ console.log(copiedUser); //{name: "John", age: "20", grade: {…}}
 console.log(user.grade.speaking === copiedUser.grade.speaking); //false
 ```
 
-- 추가 reference
+### 추가 reference
 
 자바스크립트 참조 타입(객체)
 
