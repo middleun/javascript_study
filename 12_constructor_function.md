@@ -4,6 +4,10 @@
 
 2. `new`연산자를 붙여 실행
 
+`new operator`
+
+사용자 정의 객체 타입 또는 내장 객체 타입의 인스턴스를 생성하는 연산자
+
 ```javascript
 function Movie(title, genre, year){
     this.name = title;
