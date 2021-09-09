@@ -25,15 +25,17 @@ console.log(userId ?? userPw ?? userName ?? "anonymous"); // Joy
 
 ### 1. while
 
+조건문이 `참일 때만` 반복문 body 실행
+
 ```javascript
 while (condition) {
     반복문 body
 }
 ```
 
-조건문이 `참일 때만` 반복문 body 실행
-
 ### 2. do ... while
+
+조건문이 참인가에 상관없이 본문을 `'최소한 한 번이라도'` 실행하고 싶을 때
 
 ```javascript
 do {
@@ -41,19 +43,22 @@ do {
 } while (condition);
 ```
 
-조건문이 참인가에 상관없이 본문을 `'최소한 한 번이라도'` 실행하고 싶을 때
-
 ### 3. for
-
-```javascript
-for (begin; condition; step) {
-    반복문 body
-}
-```
 
 세미콜론( ; ) 필수
 
 반복문의 조건이 `falsy가 될 때까지` 반복
+
+```javascript
+for (begin; condition; step) {
+    // begin : 초기값, condition: 조건, step: 코드 실행 후 작업
+    반복문 body
+}
+
+for (let i = 0; i < 10; i++) {
+    consol.log(i);
+}
+```
 
 - **`break`**
 
@@ -99,7 +104,7 @@ for (begin; condition; step) {
 
 복수의 if문 -> switch문
 
-하나 이상의 `case문`으로 구성
+`하나 이상의 case문`으로 구성
 
 break문을 만나기 전까지의 모든 구문을 다 실행
 
@@ -120,7 +125,27 @@ break문을 만나기 전까지의 모든 구문을 다 실행
     // 변수 x의 값과 일치하는 값을 case문에서 찾으면 case문 아래 코드 실행
     // but, x의 값과 일치하는 case문이 없으면 default문 아래의 코드 실행 (like 'if문의 else')
 
-    switch(fruit)
+    let drink = prompt("어떤 커피를 원하시나요?");
+
+    switch(drink) {
+        case "아메리카노" :
+            console.log("100원입니다");
+            break;
+
+        case "바닐라라떼" :
+            console.log("200원입니다");
+            break;
+
+        case "콜드브루" :
+            console.log("300원입니다");
+            break;
+        case "아인슈페너" :
+        case "카페모카" :
+            console.log("400원입니다");
+            break;
+        default :
+            console.log("원하시는 메뉴가 없습니다");
+    }
 ```
 
 ```javascript

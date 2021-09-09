@@ -1,4 +1,4 @@
-# 함수표현식(function Expression)
+# 함수표현식(Function Expression)
 
 함수를 생성하고 함수를 변수에 할당
 
@@ -9,10 +9,10 @@ function getName(){
 }
 
 // getName을 새로운 변수 func에 복사
-let func = getName; // cf.getName(); 할 경우 함수의 반환값이 저장됨!
+let copyFunc = getName; // cf.getName(); 할 경우 함수의 반환값이 저장됨!
 
 //복사한 함수 or
-func(); 
+copyFunc(); 
 // 본래 함수로 함수 호출 가능
 getName(); 
 ```
@@ -76,7 +76,7 @@ getName(showGreeting);
 
 함수가 선언되기 전까지 접근 불가
 
-- 함수선언문 : 함수 선언문이 `정의되기 전에도` 호출 가능
+- 함수선언문 : 함수 선언문이 `정의되기 전에도` 호출 가능(호이스팅)
 
 스크립트 실행 전 `준비단계`에서 선언된 함수 선언문을 찾아 함수 생성
 

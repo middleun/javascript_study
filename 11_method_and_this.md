@@ -28,9 +28,13 @@ user.sayHello(); // Hello!
 
 javascript에서는 모든 함수에 this 사용 가능, this의 값이 결정되어 있지 않고 문맥에 따라 그 값이 바뀜
 
-런타임에 결정 : 메소드가 어디서 정의되었는지에 상관없이 '점 앞의' 객체가 무엇인가에 따라 결정됨
+**런타임에 결정** : 메소드가 어디서 정의되었는지에 상관없이 '점 앞의' 객체가 무엇인가에 따라 결정됨
 
 >대부분의 경우 this의 값은 함수를 호출한 방법에 의해 결정됩니다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있습니다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/this)
+
+- 화살표 함수는 자신만의 this를 가지지 않음
+
+    so, 화살표 함수 내부에서 this사용 -> 외부에서 값을 가져옴
 
 ### 전역 범위(Global Context)
 
@@ -105,3 +109,7 @@ user.greeting(); // 해당 user 객체 안에서 호출 -> happy Ann's day
 JavaScript 개발자라면 꼭 알아야 할 this
 
 <https://wormwlrm.github.io/2019/03/04/You-should-know-JavaScript-this.html>
+
+코딩앙마 유튜브
+
+<https://www.youtube.com/watch?v=KF6t61yuPCY&ab_channel=%EC%BD%94%EB%94%A9%EC%95%99%EB%A7%88>

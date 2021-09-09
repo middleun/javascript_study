@@ -2,7 +2,7 @@
 
 원시형(primitive type)과 달리 키로 구분된 데이터 집합이나 복잡한 개체 등 다양한 데이터 저장 가능
 
-빈 객체 생성
+## 빈 객체 생성
 
 ```javascript
 let movie = new Object(); // '객체 생성자(object constructor)' 문법
@@ -23,50 +23,64 @@ let movie = {
 };
 ```
 
-프로퍼티 접근
+## 프로퍼티 접근
 
 - 점 표기법 : `obj.property`
 
 - 대괄호 표기법 : `obj["property"]`
 
-프로퍼티 삭제
+## 프로퍼티 삭제
 
  `delete obj.property`
 
+## 단축 프로퍼티
+
+```javascript
+const title = "Black Widow";
+const genre = "action";
+
+let movie = {
+    title,
+    genre, 
+};
+console.log(movie.title, movie.genre); // Black Widow action
+```
+
 ## 프로퍼티 존재 여부 확인
 
-- 일치연산자와 undefined 사용
+- `일치연산자`와 `undefined` 사용
 
-```javascript
-let movie = {
-    title : "Black Widow",
-    genre : "action",
-    year : "2021", 
-};
+    ```javascript
+    let movie = {
+        title : "Black Widow",
+        genre : "action",
+        year : "2021", 
+    };
 
-alert( movie.detail === undefined ) //true : 프로퍼티가 존재하지 않음
-```
+    alert( movie.detail === undefined ) //true : 프로퍼티가 존재하지 않음
+    ```
 
-대부분의 경우에는 이 방법이 잘 작동하지만, 프로퍼티는 존재하는데 undefined가 값에 할당된 경우에는 존재 여부 판단이 어려움
--> in 연산자 사용
+    대부분의 경우에는 이 방법이 잘 작동하지만, 프로퍼티는 존재하는데 undefined가 값에 할당된 경우에는 존재 여부 판단이 어려움
+    -> in 연산자 사용
 
-- in 사용
-`"key" in object`
+- `in` 사용
 
-```javascript
-let movie = {
-    title : "Black Widow",
-    genre : "action",
-    year : "2021", 
-};
+    `"key" in object`
 
-alert( "title" in movie ) //true : movie.title이 존재 
-alert( "detail" in movie ) // false : movie.detail은 존재X 
-```
+    ```javascript
+    let movie = {
+        title : "Black Widow",
+        genre : "action",
+        year : "2021", 
+    };
+
+    alert( "title" in movie ) //true : movie.title이 존재 
+    alert( "detail" in movie ) // false : movie.detail은 존재X 
+    ```
 
 ## 'for...in' 반복문
 
-객체의 모든 키를 순회할 수 있음
+객체의 모든 키를 `순회`할 수 있음
 
 ```javascript
 for (key in object) {
@@ -78,13 +92,13 @@ for (key in object) {
 let movie = {
     title : "Black Widow",
     genre : "action",
-    year : "2021", 
+    year : 2021, 
 };
 
 for (let data in movie) {
 
-    alert( data ); // key - title, genre, year 
-    alert( movie[data] ) // value - Black Widow, action, 2021
+    alert( data ); // title, genre, year (key)
+    alert( movie[data] ) // "Black Widow", "action", 2021 (value)
 }
 ```
 
@@ -147,6 +161,12 @@ function multiplayNumeric(obj){
 }
 ```
 
-- reference
+### 추가 reference
+
+자바스크립트 참조 타입(객체)
 
 <https://velog.io/@smp2103/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%B0%B8%EC%A1%B0-%ED%83%80%EC%9E%85%EA%B0%9D%EC%B2%B4>
+
+코딩앙마 유튜브
+
+<https://www.youtube.com/watch?v=KF6t61yuPCY&ab_channel=%EC%BD%94%EB%94%A9%EC%95%99%EB%A7%88>

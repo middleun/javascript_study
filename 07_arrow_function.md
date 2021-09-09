@@ -5,13 +5,14 @@ let func = (arg1, arg2, arg3) => (expression)
 ```
 
 ```javascript
+
+let sum = function(a,b){
+    return a + b;
+}
+
+// 화살표 함수로 바꾸면?
 let sum = (a,b) => a + b;
-
-// -> 아래 함수의 축약형
-
-// let sum = function(a,b){
-    // return a + b;
-// } 
+ 
 ```
 
 ## 본문이 한 줄일 때
@@ -45,4 +46,23 @@ ask(
     () => alert("삭제되었습니다"),
     () => alert("취소되었습니다")
 ); 
+
+// Q2 (화살표함수로 바꿔보기)
+const add = function (num1, num2) {
+    const result = num1 + num2;
+    return result;
+}
+
+// 화살표함수로 바꾸면?
+const add = (num1, num2) => {
+    const result = num1 + num2;
+    return result;
+}
+
+// 더 간단하게 
+const add = (num1, num2) => {
+    return num1 + num2;
+}
+
+// const add = (num1, num2) => (num1 + num2); 
 ```
