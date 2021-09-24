@@ -143,3 +143,59 @@ for (color of colors) {
 `for(let i in arr)`
 
 : `객체`에 최적화된 반복문, 모든 프로퍼티를 대상으로 순회하기 때문에 **'필요없는'** 프로퍼티들이 문제를 일으킬 가능성이 있음 => 배열엔 사용하지 않는 것이 좋음
+
+```javascript
+// Q1
+let styles = ["Jazz", "Blues"];
+
+styles.push("Rock-n-Roll");
+console.log(styles);
+
+// 배열 정 중앙에 있는 요소 찾기?
+// for (let i = 0; i<styles.length; i++) {
+//         if( i = styles.length % (i + 1) ){
+//             styles[i] = "Classics";
+//         }
+//         console.log(styles);
+// }
+
+// 반올림! - Math.ceil()
+let idx = Math.ceil(styles.length / 2) - 1
+console.log(idx);
+
+styles[idx] = "Classics";
+console.log(styles);
+
+styles.shift();
+console.log(styles);
+
+styles.unshift("Rap", "Reggae");
+console.log(styles);
+
+// Q2 - 배열 컨텍스트에서 함수 호출
+let arr = ["a", "b"];
+arr.push (function() {
+    alert( this ); // arr를 참조
+})
+
+alert(arr); // a, b, function() {alert(this); }
+
+arr[2](); // a, b, function () {alert(this); }
+
+// Q3 - 입력한 숫자의 합 구하기
+
+function sumInput(){
+    let arr = [];
+
+    // while (true) {
+    //     let input = +prompt("숫자를 입력해주세요", 0);
+    //     arr.push(input);
+    //     console.log(arr);
+        
+    //     if ( input === null || input === undefined ) {
+    //         return false;
+    //     }
+    // }
+}
+sumInput();
+```
