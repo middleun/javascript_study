@@ -1,6 +1,6 @@
 # 배열(Array)
 
-순서가 있는 컬렉션을 저장할 때 쓰는 자료구조
+`순서`가 있는 컬렉션을 저장할 때 쓰는 자료구조
 
 ## 배열 선언
 
@@ -181,21 +181,4 @@ arr.push (function() {
 alert(arr); // a, b, function() {alert(this); }
 
 arr[2](); // a, b, function () {alert(this); }
-
-// Q3 - 입력한 숫자의 합 구하기
-
-function sumInput(){
-    let arr = [];
-
-    // while (true) {
-    //     let input = +prompt("숫자를 입력해주세요", 0);
-    //     arr.push(input);
-    //     console.log(arr);
-        
-    //     if ( input === null || input === undefined ) {
-    //         return false;
-    //     }
-    // }
-}
-sumInput();
 ```
