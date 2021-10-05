@@ -170,3 +170,91 @@ console.log(arr[0].name); // John
 console.log(arr[1].name); // Mary
 console.log(arr[2].name); // Pete
 ```
+
+```javascript
+// Q9 - 평균 나이 구하기 : foreEach? reduce? ....reduece.!
+function getAverageAge(users){
+    return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+}
+
+let john = {name: "John", age: 25};
+let pete = {name: "Pete", age: 30};
+let mary = {name: "Mary", age: 28};
+
+let arr = [ john, pete, mary ];
+
+console.log( getAverageAge(arr) ); // 27.666666666666668
+
+let result = getAverageAge(arr);
+
+console.log(Math.ceil(Number(result))); // 28
+```
+
+```javascript
+// Q10 - 배열 내 중복 되는 요소 탐색
+
+function unique(arr) {
+    // 1. 새로운 배열 생성
+    let result = [];
+
+    for(str of arr){
+        // 2. 새로운 배열 안에 요소가 있는지 확인, 없다면
+        if(!result.includes(str)) {
+            // 3. 새로운 배열에 요소를 push 
+            result.push(str);
+        }
+    }
+    return result;
+    console.log(result);
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna", 
+"Krishna", "Krishna", "Hare", "Hare", ":-0"];
+
+console.log( unique(strings) ); // (3) ['Hare', 'Krishna', ':-0']
+```
+
+```javascript
+// Q11 
+
+function groupById(users){
+    users.reduce((object, value) => {
+        object[value.id] = value;
+        return object;
+    },{}) // 빈 객체를 초기값으로
+}
+
+let users = [
+    {id: 'john', name: "John Smith", age: 20},
+    {id: 'ann', name: "Ann Smith", age: 24},
+    {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+let userById = groupById(users);
+console.log(userById);
+```
+
+## + 예제 풀이 more and more
+
+```javascript
+// 1차 시도
+function divideArrayInHalf(array) {
+    let result = [];
+    for(let i = 0; i < array.length; i++) {
+        if(array[i] = 10 || array[i] <= 10){
+            result.unshift(array[i]);
+        } else {
+            result.push(array[i]);
+        }
+    }
+    return result;
+    console.log(result);
+}
+
+let array = [1, 20, 10, 5, 100];
+divideArrayInHalf(array);
+console.log(array); // (5) [10, 10, 10, 10, 10]
+// console.log(result);
+```
+
+### 추가 reference / 예제 출처
