@@ -316,49 +316,8 @@ console.log(array); // (5) [10, 10, 10, 10, 10]
 // console.log(result);
 ```
 
-## Codewars - kata 예제 풀이(Kata)
-
-1. **Sort and Star** ~~(-ing)~~
-
-> You will be given a vector of strings. You must sort it **`alphabetically`** (case-sensitive, and based on the ASCII values of the chars) and then return the **`first value`**.
->
-> The returned value must be a **`string`**, and have `"***"` `between each of its letters`.
->
-> You should **not remove or add** elements from/to the array.
-
-```javascript
-// my solution
-function twoSort(s) {
-    // 배열 알파벳순으로 정렬(sort) 후 첫 번째 요소(splice) 반환, 배열을 문자열로 변환(join) 
-    let result = s.sort().splice(0,1).join();
-    // 단일 문자로 분리(split) 후, 결합문자("***") 사용해 다시 문자열 변환(join)
-    return result.split("").join("***");
-}
-
-let arr1 = ["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"];
-let arr2 = ["truns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"];
-twoSort(arr1); // 'b***i***t***c***o***i***n'
-twoSort(arr2); // 'a***r***e'
-```
-
-```javascript
-// Best solution of others
-function twoSort(s) {
-  return s.sort()[0].split('').join('***');
-} // 인덱스를 사용하면 되었을 것을..!!! 복잡하게 돌고 돌아갔다
-
-let arr1 = ["bitcoin", "take", "over", "the", "world", "maybe", "who", "knows", "perhaps"];
-let arr2 = ["truns", "out", "random", "test", "cases", "are", "easier", "than", "writing", "out", "basic", "ones"];
-twoSort(arr1); // 'b***i***t***c***o***i***n'
-twoSort(arr2); // 'a***r***e'
-```
-
-### 추가 reference / 예제 출처
+### sources
 
 JavaScript 연습 문제 - velog
 
 <https://velog.io/@jinjinhyojin/JavaScript-%EC%97%B0%EC%8A%B5-%EB%AC%B8%EC%A0%9C>
-
-Training on Sort and Star | Codewars
-
-<https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/javascript>
