@@ -175,7 +175,7 @@ console.log( num.toString(2) ); // 11111111
     console.log( parseInt("010") ); // 8
     ```
 
-- **`parseInt()`**
+- **`parseFloat()`**
 
     **`부동 소수점 숫자`**를 반환
 

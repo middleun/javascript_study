@@ -1,6 +1,6 @@
 # Kata in Codewars
 
-## Sort and Star ~~(-ing)~~
+## Sort and Star ~~(-ing)~~ ( 8kyu )
 
 > You will be given a vector of strings. You must sort it **`alphabetically`** (case-sensitive, and based on the ASCII values of the chars) and then return the **`first value`**.
 >
@@ -35,7 +35,7 @@ twoSort(arr1); // 'b***i***t***c***o***i***n'
 twoSort(arr2); // 'a***r***e'
 ```
 
-## Replace With Alphabet Position
+## Replace With Alphabet Position ( 6kyu )
 
 > In this kata you are required to, given a string, **replace** every letter with its **position** in the `alphabet`.
 >
@@ -109,6 +109,166 @@ function uniqueInOrder(it) {
   }
   
   return result;
+}
+```
+
+## Flatten and sort an array (-ing)
+
+>Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+>
+>Example:
+>
+>Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
+>
+>Addendum:
+>
+>Please, keep in mind, that JavaScript is by default sorting objects alphabetically.
+
+```javascript
+// 1st try
+
+```
+
+## Get the mean of an array ( 8kyu )
+
+: 평균값 구하기
+
+> It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their **average** for them. Easy ! You just need to write a script.
+>
+>Return the average of the given array **rounded down** to its nearest integer.
+>
+>The array will never be empty.
+
+```javascript
+//** MY solution **//
+// 1st try
+function getAverage(marks){
+  let sum = 0; // 값을 0으로 초기화한 상태로 시작! 잊지 말 것
+  //TODO : calculate the downward rounded average of the marks array
+  for(let i = 0; i<marks.length; i++) {
+    sum += Math.floor(marks[i]);
+  }
+  return sum / marks.length;
+}
+getAverage([2,2,2,2]); // 2
+// -- FAILED -- expected 1.125 to equal 1
+
+
+// 2nd try
+function getAverage(marks){
+  let sum = 0;
+  //TODO : calculate the downward rounded average of the marks array
+  for(let i = 0; i<marks.length; i++) {
+    sum += marks[i];
+  }
+  return Math.floor(sum / marks.length);
+}
+getAverage([2,2,2,2]); // 2
+// -- PASSED --
+```
+
+```javascript
+//** BEST solution of oters **//
+function getAverage(marks){
+  return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
+}
+// reduce!
+```
+
+## You only need one - Beginner ( 8kyu )
+
+> You will be given an `array a` and a `value x`. All you need to do is check whether the provided `array` **contains** the `value`.
+>
+> Array can contain numbers or strings. X can be either.
+>
+> Return true if the array contains the value, false if not.
+
+```javascript
+//** MY solution **//
+function check(a, x) {
+  // your code here
+  // array a가 요소 x를 포함하고 있는지 체크
+  if (a.includes(x)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+check([66,101], 66); // true
+check(["what", "a", "great", "kata"], "kat"); // false
+```
+
+```javascript
+//** BEST solution of others **//
+const check = (a,x) => a.includes(x);
+// 화살표함수! 익숙해지도록....!!
+```
+
+## Find the smallest integer in the array ( 8kyu ) (-ing)
+
+> Given an array of integers your solution should find the **smallest integer**.
+>
+> For example:
+>
+> Given [34, 15, 88, 2] your solution will return 2
+> Given [34, -345, -1, 100] your solution will return -345
+> You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+```javascript
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    
+  }
+}
+```
+
+## Count of positives / sum of negatives ( 8kyu ) (-ing)
+
+> Given an array of integers.
+>
+> Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers.
+>
+> If the input array is empty or null, return an empty array.
+>
+> For example:
+> For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
+
+```javascript
+//** MY solution **//
+// 1st try
+function countPositivesSumNegatives(input) {
+  let sum = 0;
+  let result = []; // -- 빈 배열이 아닌 요소가 둘인 배열을 준비해도 ok. + input이 null이거나 empty일 때도 설정해야.
+  for(let i = 0; i < input.length; i++) {
+    if (input[i] > 0) {
+      return input.length;
+    } else {
+      return sum += input[i];
+    }
+  }
+    return resut.push(); // -- 1부터 잘못되었기 때문에 여기서 당연히 막힘.
+}
+
+// 2nd try
+function countPositivesSumNegatives(input) {
+  if(input == null || input === "") {
+    return [];
+  }
+  
+  let result = [];
+  let countPos = 0;
+  let sumNeg = 0;
+  for(let i = 0; i < input.length; i++) {
+    if (input[i] > 0) {
+      countPos += 1;
+    } else {
+      sumNeg += input[i];
+    }
+    result.push(countPos);
+    result.push(sumNeg);
+  }
+    return result;
 }
 ```
 
