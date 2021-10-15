@@ -379,6 +379,7 @@ function even_or_odd(number) {
 - "."을 기준을 결합 - join()
 
 ```javascript
+//** MY solution **//
 function abbrevName(name){
  return name
     // name을 two words로 split(글자 사이 space를 기준으로!)
@@ -390,6 +391,24 @@ function abbrevName(name){
 abbrevName("Sam Harris"); // 'S.H'
 abbrevName("Tom Hody"); // 'P.F'
 abbrevName("Robert Downy Junior"); // 'R.D.J'
+```
+
+```javascript
+//** BEST solution of others **//
+function abbrevName(name){
+
+  var nameArray = name.split(" ");
+  return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+  // array[0][0] 이런 식으로 써도 되는구나!
+}
+```
+
+```javascript
+//** ANOTHER solution **//
+function abbrevName(name){
+  return name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.');
+  // substr로 부분문자열 추출
+}
 ```
 
 ### sources
