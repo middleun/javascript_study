@@ -202,9 +202,20 @@ console.log(result); // (3) [2, 4, 6] - 조건에 만족하는 모든 요소(�
 
 `arr.map(fn)`
 
-: 모든 요소에 함수를 호출하고 반환된 결과를 `새로운 배열`로 반환
+: 모든 요소 `각각`에 주어진 함수를 호출하고 반환된 결과를 `새로운 배열`로 반환
+
+: 반복문을 돌며 배열 안의 요소들을 **1대 1**로 짝짓되(`매핑`) 기존 배열을 수정하지 않음
 
 ```javascript
+// ex1
+let arr = [1, 2, 3, 4];
+
+let newArr = arr.map(num => num * 10);
+
+console.log(newArr); // (4) [10, 20, 30, 40]
+
+
+// ex2
 let users = [
     { id: 1, name: "Ann", age: 20 },
     { id: 2, name: "John", age: 27 },
@@ -429,6 +440,10 @@ console.log(Array.isArray(users)); // true
 
 ### 추가 reference
 
-코딩앙마 유튜브
+- 코딩앙마 유튜브
 
 <https://www.youtube.com/watch?v=pJzO6O-aWew&t=15s&ab_channel=%EC%BD%94%EB%94%A9%EC%95%99%EB%A7%88>
+
+- (JavaScript) map, reduce 활용하기 - 함수형 프로그래밍 - ZeroCho Blog
+
+<https://www.zerocho.com/category/JavaScript/post/5acafb05f24445001b8d796d>

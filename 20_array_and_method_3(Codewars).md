@@ -331,8 +331,69 @@ function noSpace(x){
 }
 ```
 
+## Even or odd ( 8kyu )
+
+> Create a function that takes an `integer` as an argument and returns **"Even"** for even numbers or **"Odd"** for odd numbers.
+
+```javascript
+//** MY solution **//
+function even_or_odd(number) {
+  // 2로 나눴을 때 나머지가 0일 경우
+  if (number % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }  
+}
+
+even_or_odd(2); // Even
+even_or_odd(7); // Odd
+even_or_odd(-30); // Even
+even_or_odd(-11); // Odd
+even_or_odd(0); // Even
+```
+
+```javascript
+//** BEST solution of others **//
+function even_or_odd(number) {
+  return number % 2 ? "Odd" : "Even"
+}
+// 삼항연산! 익숙해지기
+```
+
+## Abbreviate a Two Word Name
+
+> Write a function to convert a name into initials. This kata strictly takes `two words with one space in between them`.
+>
+> The output should be **two capital letters** with a **dot** separating them.
+>
+> It should look like this:
+>
+> Sam Harris => S.H
+> patrick feeney => P.F
+
+- name을 two words로 각각 분리. - split()
+
+- 각 문자열의 첫 글자를 찾고 capitalize. - map(), toUpperCase()
+
+- "."을 기준을 결합 - join()
+
+```javascript
+function abbrevName(name){
+ return name
+    // name을 two words로 split(글자 사이 space를 기준으로!)
+   .split(" ")
+    // split된 배열의 문자열 요소 각각의 첫번째 글자를 찾아 새로운 배열 생성 
+   .map(str => str[0].toUpperCase()) // abbrevName("Sam Harris"); -> ["S", "H"] 
+   .join("."); // "."을 기준으로 문자열로 변환
+}
+abbrevName("Sam Harris"); // 'S.H'
+abbrevName("Tom Hody"); // 'P.F'
+abbrevName("Robert Downy Junior"); // 'R.D.J'
+```
+
 ### sources
 
-Training on Sort and Star | Codewars
+Codewars
 
-<https://www.codewars.com/kata/57cfdf34902f6ba3d300001e/train/javascript>
+<https://www.codewars.com/>
