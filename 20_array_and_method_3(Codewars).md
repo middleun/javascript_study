@@ -272,6 +272,65 @@ function countPositivesSumNegatives(input) {
 }
 ```
 
+## Counting sheep
+
+>Consider an array/list of sheep where some sheep may be missing from their place. We need a function that **counts** the number of sheep present in the array (true means present).
+>
+> For example,
+>
+>[true,  true,  true,  false,
+> true,  true,  true,  true ,
+> true,  false, true,  false,
+> true,  false, false, true ,
+> true,  true,  true,  true ,
+> false, false, true,  true]
+> The correct answer would be 17.
+>
+> Hint: Don't forget to check for bad values like null/undefined
+
+```javascript
+//** MY solution **//
+function countSheeps(array) {
+  // TODO May the force be with you
+  // Boolean을 사용해 fasle, 0, "", NaN, undefinded, null 등을 filter로 걸러낸 나머지를 배열의 요소로 반환
+  return array.filter(Boolean).length;
+}
+```
+
+```javascript
+//** BEST solution of others **//
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
+}
+```
+
+```javascript
+//** ANOTHER solution **//
+function countSheeps(arrayOfSheep) {
+  // TODO May the force be with you
+  var num = 0;
+  
+  for(var i = 0; i < arrayOfSheep.length; i++)
+    if(arrayOfSheep[i] == true)
+      num++;
+      
+  return num;
+}
+```
+
+## Remove String Spaces ( 8kyu )
+
+문자열 메소드
+
+> Simple, **remove the spaces** from the string, then return the resultant string.
+
+```javascript
+function noSpace(x){
+  // replace 정규표현식 사용 
+  return x.replace(/ /gi,"");
+}
+```
+
 ### sources
 
 Training on Sort and Star | Codewars
