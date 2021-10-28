@@ -1,6 +1,6 @@
-# Kata in Codewars
+# Kata in Codewars ( 8kyu )
 
-## Sort and Star ~~(-ing)~~ ( 8kyu )
+## Sort and Star ~~(-ing)~~
 
 > You will be given a vector of strings. You must sort it **`alphabetically`** (case-sensitive, and based on the ASCII values of the chars) and then return the **`first value`**.
 >
@@ -35,101 +35,7 @@ twoSort(arr1); // 'b***i***t***c***o***i***n'
 twoSort(arr2); // 'a***r***e'
 ```
 
-## Replace With Alphabet Position ( 6kyu )
-
-> In this kata you are required to, given a string, **replace** every letter with its **position** in the `alphabet`.
->
-> If anything in the text isn't a letter, ignore it and don't return it.
->
-> "a" = 1, "b" = 2, etc.
-
-```javascript
-function alphabetPosition(text) {
-  let result = [];
-  let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  
-  for (let i = 0; i<text.length; i++) {
-    let char = text[i].toLowerCase();
-    //indexOf - 요소 발견하지 못하면 -1 반환
-    if(alphabet.indexOf(char) !== -1) { 
-      result.push(alphabet.indexOf(char) + 1);
-    }
-  }
-  return result.join(" ");
-}
-alphabetPosition("The sunset sets at twelve o' clock."); // '20 8 5 19 21 14 19 20 5 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11'
-alphabetPosition(",m!fq=3/"); // '13 6 17'
-```
-
-## Unique In Order
-
-> Implement the function unique_in_order which takes as argument a sequence and returns a list of items **without any elements with the same value** next to each other and preserving the original order of elements.
-
-```javascript
-// my solution - 1st try
-var uniqueInOrder=function(iterable){
-  let result  = [];
-    for(char of iterable){
-      if(!result.includes(char)) {
-        result.push(char);
-      }
-    }
-  return result;
-  console.log(result); 
-}
-uniqueInOrder("AAAABBBCCDAABBB"); // (4) ['A', 'B', 'C', 'D']
-
-// my solution - 2nd try
-var uniqueInOrder=function(iterable){
-  //your code here - remember iterable can be a string or an array
-  let result  = [];
-    for(let i = 0; i<iterable.length; i++) {
-      if(iterable[i] === iterable[i+1]) {
-        continue;
-      } else {
-        result.push(iterable[i]);
-      }
-    }
-  return result;
-  console.log(result);
-}
-uniqueInOrder("AAAABBBCCDAABBB"); // (6) ['A', 'B', 'C', 'D', 'A', 'B']
-```
-
-```javascript
-// Best solution of others
-function uniqueInOrder(it) {
-  var result = []
-  var last
-  
-  for (var i = 0; i < it.length; i++) {
-    if (it[i] !== last) {
-      result.push(last = it[i])
-    }
-  }
-  
-  return result;
-}
-```
-
-## Flatten and sort an array (-ing)
-
->Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
->
->Example:
->
->Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
->
->Addendum:
->
->Please, keep in mind, that JavaScript is by default sorting objects alphabetically.
-
-```javascript
-// 1st try
-
-```
-
-## Get the mean of an array ( 8kyu )
+## Get the mean of an array
 
 : 평균값 구하기
 
@@ -175,7 +81,7 @@ function getAverage(marks){
 // reduce!
 ```
 
-## You only need one - Beginner ( 8kyu )
+## You only need one - Beginner
 
 > You will be given an `array a` and a `value x`. All you need to do is check whether the provided `array` **contains** the `value`.
 >
@@ -205,7 +111,7 @@ const check = (a,x) => a.includes(x);
 // 화살표함수! 익숙해지도록....!!
 ```
 
-## Find the smallest integer in the array ( 8kyu ) (-ing)
+## Find the smallest integer in the array(-ing)
 
 > Given an array of integers your solution should find the **smallest integer**.
 >
@@ -318,7 +224,7 @@ function countSheeps(arrayOfSheep) {
 }
 ```
 
-## Remove String Spaces ( 8kyu )
+## Remove String Spaces
 
 문자열 메소드
 
@@ -331,7 +237,7 @@ function noSpace(x){
 }
 ```
 
-## Even or odd ( 8kyu )
+## Even or odd
 
 > Create a function that takes an `integer` as an argument and returns **"Even"** for even numbers or **"Odd"** for odd numbers.
 
@@ -409,6 +315,120 @@ function abbrevName(name){
   return name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.');
   // substr로 부분문자열 추출
 }
+```
+
+## Convert a string to an array
+
+> Write a function to split a string and convert it into an array of words.
+> For example:
+> "Robin Singh" ==> ["Robin", "Singh"]
+
+```javascript
+function stringToArray(string){
+
+  return string.split(" "); // " " 을 기준으로 string을 split 
+
+}
+
+stringToArray("Robin Singh"); // (2) ['Robin', 'Singh']
+stringToArray("I love arrays they are my favorite"); // 
+```
+
+## Is there a vowel in there? ~~(-ing)~~
+
+vowel : 모음!
+
+> Given an array of numbers, check if any of the numbers are the **character codes** for lower case vowels (a, e, i, o, u).
+>
+> If they are, change the array value to a **string** of that vowel.
+>
+>Return the resulting array.
+
+: number를 code에 대응하는 string으로 변환하는 메소드 필요.
+
+: String.`fromCodePoint()`, String.`fromCharCode()`
+
+>> String.`fromCodePoint()`, String.`fromCharCode()`의 차이??
+>>
+>> : fromCodePoint()는 서로게이트쌍을 처리할 수 있음
+
+```javascript
+//** MY solution **// - 1st try / step by step 
+// 1st try - 1step
+function isVow(a){
+  let result = [];
+
+  for( let i = 0; i < a.length; i++){
+    let str = String.fromCharCode(a[i]);
+  // 변환된 str이 새로운 배열에 push되었는지 확인해봄 
+    result.push(str); 
+  }
+  return result;
+  console.log(result); // (17) ['v', 'u', 'x', 'y', 'u', 'b', 'z', 'a', 'x', 'j', 'h', 't', 'q', 'r', 'q', 'x', 'j']
+}
+
+isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]);
+
+//1st try - 2step (.. 뭔가 복잡한 느낌..!)
+function isVow(a){
+  let result = [];
+  let vowel = ["a", "e", "i", "o", "u"];
+
+  for( let i = 0; i < a.length; i++){
+    let str = String.fromCharCode(a[i]);
+    if (vowel.includes(str)) {
+      result.push(str);
+    } else {
+      result.push(a[i]);
+    }
+  }
+  return result;
+  console.log(result); // (17) [118, 'u', 120, 121, 'u', 98, 122, 'a', 120, 106, 104, 116, 113, 114, 113, 120, 106]
+}
+isVow([118,117,120,121,117,98,122,97,120,106,104,116,113,114,113,120,106]);
+// -- PASSED --
+// 이긴 하지만, 새로운 배열을 만들 필요 없이 기존 배열에서 바꿀 수 있는 방법...?! 고민
+```
+
+```javascript
+//** BEST solution of others **//
+function isVow(a){
+  for (var i=0, l=a.length; i<l; ++i)
+  {
+    var char = String.fromCharCode(a[i])
+    // 모음 배열을 만들 필요없이. 간단하게 문자열로 생각하면 되는 것..!
+    if ('aeiou'.indexOf(char) !== -1)
+    a[i] = char;
+  }
+  
+  return a;
+}
+```
+
+```javascript
+//** OTHER solutions -1 **//
+const isVow = a => a.map(x=>'aeiou'.includes(y=String.fromCharCode(x)) ? y : x)
+
+//** OTHER solutions -2 **//
+function isVow(a){
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+return a.map(code => vowels.includes(String.fromCharCode(code)) ? String.fromCharCode(code) : code )
+}
+
+// map 활용!
+```
+
+## Convert number to reversed array of digits (-ing)
+
+> Given a random non-negative number, you have to return the digits of this number within an **array in reverse order**.
+> Example:
+> 348597 => [7,9,5,8,4,3]
+
+: 일단 배열로 변환 후 reverse ? reverse 후 배열로 변환?
+
+```javascript
+//** MY solutions **//
+
 ```
 
 ### sources

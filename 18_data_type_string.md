@@ -186,7 +186,7 @@ console.log( str.slice( -2, -1) ); // a
 
 `pos`에 위치한 글자의 `코드` 반환
 
-### str.`formCodePoint(code)`
+### String.`fromCodePoint(code)`
 
 숫자 형식의 `code`에 대응하는 `글자` 반환
 
