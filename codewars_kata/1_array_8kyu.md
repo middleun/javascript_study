@@ -424,12 +424,40 @@ return a.map(code => vowels.includes(String.fromCharCode(code)) ? String.fromCha
 > Example:
 > 348597 => [7,9,5,8,4,3]
 
-: 일단 배열로 변환 후 reverse ? reverse 후 배열로 변환?
+: number를 string화 한 후, 배열로 변환 -> 역순 배열 -> 요소 하나하나 다시 number화
 
 ```javascript
 //** MY solutions **//
-
+function digitize(n) {
+  // convert number to string, split, reverse, convert EACH string to number 
+  return String(n).split("").reverse().map(Number);
+}
+digitize(35231);-
 ```
+
+```javascript
+//** BEST solution of others **//
+function digitize(n) {
+  return String(n).split('').map(Number).reverse()
+}
+```
+
+```javascript
+//** OTHER solutions - 1 **//
+function digitize(n){
+  return (n + '').split('').map(Number).reverse();
+}
+
+//** OTHER solutions - 2 **//
+function digitize(n) {
+  return Array.from(String(n), Number).reverse();
+}
+// Array.from!! 
+```
+
+> Array.from는 이터러블이나 유사 배열을 받아 '진짜' Array를 만들어줍니다. - [모던Javascript튜토리얼](https://ko.javascript.info/iterable)
+>
+> Array.from()메서드는 유사 배열 객체(array-like object)나 반복 가능한 객체(iterable object)를 얕게 복사해 새로운 Array 객체를 만듭니다. - [mdn](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
 ### sources
 
