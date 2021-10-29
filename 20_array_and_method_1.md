@@ -150,7 +150,7 @@ let arr = [1,2,3,4,5,6];
 let result = arr.find((item) => {
     return item % 2 === 0;
 });
-console.log(result); // 2 - 첫번째 trun값만 반환하고 탐색 중단! 모든 값을 반환하고 싶다면 filter 사용
+console.log(result); // 2 - 첫번째 true값만 반환하고 탐색 중단! 모든 값을 반환하고 싶다면 filter 사용
 
 // ex 2
 let users = [
