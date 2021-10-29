@@ -279,7 +279,7 @@ function noSpace(x){
 }
 ```
 
-> [replace 정규표현식](https://github.com/middleun/javascript_study/blob/master/18_data_type_string.md)
+> [replace 정규표현식](../18_data_type_string.md#strreplace정규식부분문자열-새로운-부분문자열함수)
 
 ## Even or odd
 
