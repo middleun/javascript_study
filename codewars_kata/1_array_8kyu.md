@@ -626,6 +626,54 @@ function maps(x){
 }
 ```
 
+## Sum Mixed Array
+
+> Given an array of `integers` as `strings` and `numbers`, return the **sum** of the array values as if all were numbers.
+>
+> Return your answer as a `number`.
+
+- MY solution
+
+```javascript
+function sumMix(x){
+  return x.map(item => Number(item)).reduce((prev, cur) => prev + cur);
+}
+```
+
+- Best solution of others
+
+```javascript
+function sumMix(x){
+  return x.map(a => +a).reduce((a, b) => a + b);
+}
+// + 를 앞에 붙이면 자동으로 Number형 변환!
+```
+
+- ANOTHER solution
+
+```javascript
+// 1
+const sumMix=x=>x.reduce((a,b)=>+b+a,0)
+
+// 2
+function sumMix(x){
+  let result = 0;
+  for (let n of x) {
+    result += parseInt(n);
+  }
+  return result;
+}
+// for문 사용-
+```
+
+## Merge two sorted arrays into one (-ing)
+
+> You are given two sorted arrays that both only contain `integers`. Your task is to find a way to **merge** them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
+>
+> You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
+>
+> Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. **Remove duplicated** in the returned result.
+
 ### sources
 
 Codewars
