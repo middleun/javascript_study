@@ -674,6 +674,21 @@ function sumMix(x){
 >
 > Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. **Remove duplicated** in the returned result.
 
+- MY solution
+
+```javascript
+// 1st try
+function mergeArrays(arr1, arr2) {
+  // arr1과 arr2를 합치고 오름차순으로 정렬. 
+  let newArr = arr1.concat(arr2).sort((a, b) => a - b)
+  // 중복되는 요소 제거할 차례! indexOf?? 
+  console.log(newArr);
+  for(let i = 0; i <= newArr.length; i++) {
+    
+  }
+}
+```
+
 ### sources
 
 Codewars

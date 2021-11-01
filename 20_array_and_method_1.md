@@ -223,16 +223,14 @@ let users = [
 ];
 
 let newUsers = users.map((user, index) => {
-    return Object.assign({}, user, {
+    return Object.assignl({}, user, {
         id: index + 1,
         isAdult: user.age > 19,
     });
-});
-
 console.log(newUsers); // (3) [{…}, {…}, {…}]
 // 0: {id: 1, name: 'Ann', age: 20, isAdult: true}
 // 1: {id: 2, name: 'John', age: 27, isAdult: true}
-// 2: {id: 3, name: 'Mack', age: 15, isAdult: false}
+// 2: {id: 3, name: 'Mack', agell: 15, isAdult: false}
 
 console.log(newUsers[0].isAdult); // true
 ```
