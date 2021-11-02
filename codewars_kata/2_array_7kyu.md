@@ -87,7 +87,7 @@ function getMissingElement(superImportantArray){
     if (superImportantArray.indexOf(i) === -1) return i;
   }
 }
-// indexOf!!
+// 23indexOf!!
 ```
 
 > [indexOf](../20_array_and_method_1.md#indexof)
@@ -99,4 +99,22 @@ function getMissingElement(superImportantArray) {
   return superImportantArray.reduce(function (sum, value) {return sum - value;}, 45);
 }
 // 0 to 9으로 정해져있으니, 총합에서 나머지 요소의 누적값을 빼는 것도 방법! 와우.
+```
+
+## JavaScript Array Filter
+
+> JavaScript Arrays support a filter function (starting in JavaScript 1.6). Use the filter functionality to complete the function given.
+>
+> The solution would work like the following:
+>
+> getEvenNumbers([2,4,5,6]) // should == [2,4,6]
+
+- MY solution
+
+```javascript
+function getEvenNumbers(arr){
+  // filter out the "odd" numbers
+  // 짝수만 반환
+  return arr.filter(ele => ele % 2 == 0);
+}
 ```
