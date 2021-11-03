@@ -64,6 +64,25 @@ console.log(test.next()); // {value: 5, done: false}
 console.log(test.next()); // {value: undefined, done: true} - 순서상 값이 존재하지 않으면 true
 ```
 
+## array.from()
+
+: `유사 배열 객체(array-like)`나 `반복 가능한 객체(iterable object)`를 얕게 복사해 새로운 array 객체를 생성
+
+### 문자열을 배열로
+
+문자열은 iterable object
+
+```javascript
+let str = "string";
+
+let arr = Array.from(str);
+console.log(arr); // (6) ['s', 't', 'r', 'i', 'n', 'g']
+```
+
+### 유사배열인 object를 array로
+
+> [Array.from_sample](Array.from_sample.html)
+
 ## 요약 정리
 
 1. **iterable** 객체는 **iterable protocol**을 만족한다
@@ -84,10 +103,8 @@ console.log(test.next()); // {value: undefined, done: true} - 순서상 값이 �
 
 ### 추가 reference
 
-Iterable | Javascript로 만나는 세상
+- [Iterable | Javascript로 만나는 세상](https://helloworldjavascript.net/pages/260-iteration.html)
 
-<https://helloworldjavascript.net/pages/260-iteration.html>
+- [[JavaScript] iterable, iterator](https://jongbeom-dev.tistory.com/139)
 
-[JavaScript] iterable, iterator
-
-<https://jongbeom-dev.tistory.com/139>
+- [Javascript ES6 Array.of() / Array.from()](https://medium.com/@bgh3470/javascript-es6-array-of-array-form-99268eb82a2b)

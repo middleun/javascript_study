@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button class="btn">btn 1</button>
+        <button class="btn">btn 2</button>
+        <button class="btn">btn 3</button>
+        <button class="btn">btn 4</button>
+        <button class="btn">btn 5</button>
+        <button class="btn">btn 6</button>
+        <button class="btn">btn 7</button>
+        <button class="btn">btn 8</button>
+        <button class="btn">btn 9</button>
+        <button class="btn">btn 10</button>
+
+        <script>
+            const btns = document.querySelectorAll(".btn");
+            console.log(btns); // NodeList(10) - array-like-object!
+            // 유사배열이지, 배열은 아님!
+
+            // 유사배열을 배열로 만들기 위해  Array.from()
+            const btnsArr = Array.from(btns);
+            console.log(btnsArr); // Array(10) - array!
+
+            btnsArr.forEach(
+                (button) =>
+                    button.addEventListener("click", () => alert("click!")) // 간단 간단!
+            );
+        </script>
+    </body>
+</html>
