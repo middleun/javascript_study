@@ -56,7 +56,7 @@ console.log(userLogInMap.get(user)); // 100 - key인 user에 해당하는 vaue 1
 
 `값의 유일무이함`을 확인하는데 최적화
 
-### 주요 메소드
+### 메소드
 
 - `new Set(iterable)` : 셋 생성. 이터러블 객체(대개 배열)를 전달받으면 `값`을 `복사`해 셋에 저장
 
