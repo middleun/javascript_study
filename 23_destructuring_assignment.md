@@ -166,6 +166,8 @@ console.log(rest.height); // 200
 console.log(rest.width); // 100
 ```
 
+> [나머지 매개변수](24_rest_and_spread_operator.md)
+
 ### 기타 reference
 
 - [[JSInfo]구조 분해 할당](https://velog.io/@cptkuk91/JSInfo19)

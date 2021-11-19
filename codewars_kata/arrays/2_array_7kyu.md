@@ -90,7 +90,7 @@ function getMissingElement(superImportantArray){
 // 23indexOf!!
 ```
 
-> [indexOf](../20_array_and_method_1.md#indexof)
+> [indexOf](../../20_array_and_method_1.md#indexof)
 
 - ANOTHER soltuions
 
